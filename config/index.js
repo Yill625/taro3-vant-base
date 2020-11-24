@@ -14,9 +14,16 @@ const config = {
   },
   copy: {
     patterns: [
+      {
+        from: "vant-weapp/dist/wxs/",
+        to: "dist/components/vant-weapp/wxs/",
+      },
+      {
+        from: "vant-weapp/dist/common/index.wxss",
+        to: "dist/components/vant-weapp/common/index.wxss",
+      }
     ],
-    options: {
-    }
+    options: {},
   },
   framework: 'nerv',
   mini: {
