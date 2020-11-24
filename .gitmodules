@@ -1,0 +1,3 @@
+[submodule "vant-weapp"]
+	path = vant-weapp
+	url = https://github.com/youzan/vant-weapp.git
