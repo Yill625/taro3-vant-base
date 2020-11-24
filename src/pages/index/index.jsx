@@ -16,7 +16,11 @@ export default class Index extends Component {
   render() {
     return (
       <View className='index'>
-        <van-image></van-image>
+        <van-image
+          width='100rpx'
+          height='100rpx'
+          src='https://img.yzcdn.cn/vant/cat.jpeg'
+        />
       </View>
     )
   }
