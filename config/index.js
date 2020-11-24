@@ -21,6 +21,10 @@ const config = {
       {
         from: "vant-weapp/dist/common/index.wxss",
         to: "dist/components/vant-weapp/common/index.wxss",
+      },
+      {
+        from: "vant-weapp/dist/",
+        to: "src/components/vant-weapp/",
       }
     ],
     options: {},
