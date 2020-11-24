@@ -1,10 +1,10 @@
 {
   "miniprogramRoot": "./dist",
   "projectname": "taro3-vant-base",
-  "description": "",
-  "appid": "touristappid",
+  "description": "基于taro3为框架vant为组件的小程序",
+  "appid": "wx00af2d3955d230c2",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "postcss": false,
     "minified": false
