@@ -31,7 +31,7 @@ const config = {
       pxtransform: {
         enable: true,
         config: {
-
+          selectorBlackList: [/^.van-.*?$/],
         }
       },
       url: {
