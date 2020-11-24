@@ -42,16 +42,17 @@
     "nervjs": "^1.5.0"
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.13.6",
-    "@types/react": "^16.0.0",
-    "@tarojs/mini-runner": "3.0.17",
     "@babel/core": "^7.8.0",
+    "@tarojs/cli": "^3.0.17",
+    "@tarojs/mini-runner": "3.0.17",
     "@tarojs/webpack-runner": "3.0.17",
+    "@types/react": "^16.0.0",
+    "@types/webpack-env": "^1.13.6",
     "babel-preset-taro": "3.0.17",
-    "eslint-config-taro": "3.0.17",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.8.2",
+    "eslint-config-taro": "3.0.17",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-react-hooks": "^1.6.1",
     "stylelint": "9.3.0"
   }
