@@ -1,6 +1,7 @@
 import Nerv, { Component } from 'nervjs'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import Toast from '../../components/vant-weapp/toast/toast'
 
 export default class Index extends Component {
   componentWillMount() {}
@@ -9,13 +10,15 @@ export default class Index extends Component {
 
   componentWillUnmount() {}
 
-  componentDidShow() {}
+  componentDidShow() {
+    Toast.success('成功文案')
+  }
 
   componentDidHide() {}
 
   render() {
     return (
-      <View className='index'>
+      <View>
         <van-button type='primary' className='but'>
           121
         </van-button>
@@ -31,6 +34,7 @@ export default class Index extends Component {
         >
           1212
         </View>
+        <van-toast id='van-toast' />
       </View>
     )
   }
