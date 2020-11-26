@@ -1,3 +1,5 @@
+import path from 'path'
+
 const config = {
   projectName: 'taro3-vant-base',
   date: '2020-11-24',
@@ -11,6 +13,9 @@ const config = {
   outputRoot: 'dist',
   plugins: [],
   defineConstants: {
+  },
+  alias: {
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
   },
   copy: {
     patterns: [
