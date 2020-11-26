@@ -21,7 +21,9 @@ export default class Index extends Component {
   onPullDownRefresh() {
     console.log('下拉刷新了')
     Taro.vibrateShort()
-    Taro.stopPullDownRefresh()
+    setTimeout(() => {
+      Taro.stopPullDownRefresh()
+    }, 1000)
   }
 
   change(e) {
