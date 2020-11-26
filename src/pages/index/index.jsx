@@ -25,7 +25,8 @@ export default class Index extends Component {
         />
         <View
           style='height:100px;width:100px;background-color:red;'
-          className='van-hairline--surround'>
+          className='van-hairline--surround'
+        >
           1212
         </View>
       </View>
