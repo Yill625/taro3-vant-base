@@ -1,20 +1,34 @@
 import Nerv, { Component } from 'nervjs'
+import Taro from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
-import Toast from '../../components/vant-weapp/toast/toast'
 
 export default class Index extends Component {
+  state = {
+    active: 0,
+  }
+
   componentWillMount() {}
 
   componentDidMount() {}
 
   componentWillUnmount() {}
 
-  componentDidShow() {
-    Toast.success('成功文案')
-  }
+  componentDidShow() {}
 
   componentDidHide() {}
+
+  onPullDownRefresh() {
+    console.log('下拉刷新了')
+    Taro.vibrateShort()
+    Taro.stopPullDownRefresh()
+  }
+
+  change(e) {
+    this.setState({
+      active: e.detail,
+    })
+  }
 
   render() {
     return (
@@ -34,7 +48,17 @@ export default class Index extends Component {
         >
           1212
         </View>
-        <van-toast id='van-toast' />
+        <van-toast />
+        <van-tabbar
+          id='van-toast'
+          active={this.state.active}
+          onChange={this.change.bind(this)}
+        >
+          <van-tabbar-item icon='home-o'>标签</van-tabbar-item>
+          <van-tabbar-item icon='search'>标签</van-tabbar-item>
+          <van-tabbar-item icon='friends-o'>标签</van-tabbar-item>
+          <van-tabbar-item icon='setting-o'>标签</van-tabbar-item>
+        </van-tabbar>
       </View>
     )
   }
