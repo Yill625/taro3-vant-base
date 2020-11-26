@@ -16,7 +16,9 @@ export default class Index extends Component {
   render() {
     return (
       <View className='index'>
-        <van-button type='primary'>121</van-button>
+        <van-button type='primary' className='but'>
+          121
+        </van-button>
         <van-image
           className='image'
           width='100rpx'
