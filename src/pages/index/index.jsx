@@ -16,11 +16,18 @@ export default class Index extends Component {
   render() {
     return (
       <View className='index'>
+        <van-button type='primary'>121</van-button>
         <van-image
+          className='image'
           width='100rpx'
           height='100rpx'
           src='https://img.yzcdn.cn/vant/cat.jpeg'
         />
+        <View
+          style='height:100px;width:100px;background-color:red;'
+          className='van-hairline--surround'>
+          1212
+        </View>
       </View>
     )
   }

@@ -1,0 +1,11 @@
+// 修改全局 vant 组件样式
+// https://github.com/youzan/vant-weapp/blob/dev/packages/common/style/var.less
+
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
+    'Microsoft Yahei', sans-serif;
+
+  --button-primary-background-color: black;
+  --button-primary-color: green;
+}
