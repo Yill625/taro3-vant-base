@@ -1,6 +1,8 @@
 import Nerv, { Component } from 'nervjs'
 import Taro from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
+import { test } from '../../api/test'
+
 import './index.scss'
 
 export default class Index extends Component {
@@ -14,8 +16,21 @@ export default class Index extends Component {
 
   componentWillUnmount() {}
 
-  componentDidShow() {}
-
+  componentDidShow() {
+    const a = this.getComment1()
+    console.log(a)
+  }
+  async getComment1() {
+    const a = await this.getComment()
+    return a
+  }
+  getComment() {
+    return new Promise((resolve, reject) => {
+      test().then(res => {
+        resolve(res)
+      })
+    })
+  }
   componentDidHide() {}
 
   onPullDownRefresh() {

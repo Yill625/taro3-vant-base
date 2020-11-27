@@ -1,4 +1,4 @@
-const path = require('path')
+import path from 'path'
 
 const config = {
   projectName: 'taro3-vant-base',
@@ -15,6 +15,7 @@ const config = {
   defineConstants: {},
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/util': path.resolve(__dirname, '..', 'src/util'),
   },
   copy: {
     patterns: [
