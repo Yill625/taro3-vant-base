@@ -1,7 +1,7 @@
 import Nerv, { Component } from 'nervjs'
 import Taro from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import { test } from '../../api/test'
+import { test } from '@/api/test'
 
 import './index.scss'
 
