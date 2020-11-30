@@ -17,19 +17,11 @@ export default class Index extends Component {
   componentWillUnmount() {}
 
   componentDidShow() {
-    const a = this.getComment1()
-    console.log(a)
+    this.getTest()
   }
-  async getComment1() {
-    const a = await this.getComment()
-    return a
-  }
-  getComment() {
-    return new Promise((resolve, reject) => {
-      test().then(res => {
-        resolve(res)
-      })
-    })
+  async getTest() {
+    const res = await test()
+    console.log(res)
   }
   componentDidHide() {}
 
