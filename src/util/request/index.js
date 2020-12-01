@@ -24,6 +24,8 @@ export default function request(options) {
     enableCache,
   })
     .then(res => {
+      isShowLoading ? hideLoading() : ''
+
       if (res.statusCode === 200) {
         if (res.data.code === 200) {
           return Promise.resolve(res.data.result)
@@ -35,11 +37,12 @@ export default function request(options) {
       }
     })
     .catch(res => {
-      console.log(res)
+      Taro.showToast({ title: JSON.stringify(res), icon: 'none' })
     })
-    .finally(() => {
-      isShowLoading ? hideLoading() : ''
-    })
+  // .finally(() => {
+  //   // 真机上小程序不支持？？
+  //   isShowLoading ? hideLoading() : ''
+  // })
 }
 
 const showLoading = () => {

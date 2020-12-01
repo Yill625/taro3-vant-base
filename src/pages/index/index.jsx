@@ -57,7 +57,7 @@ export default class Index extends Component {
         >
           1212
         </View>
-        <van-toast />
+
         <van-tabbar
           id='van-toast'
           active={this.state.active}
