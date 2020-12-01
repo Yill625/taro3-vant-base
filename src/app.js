@@ -1,18 +1,22 @@
 import { Component } from 'nervjs'
-import Taro from '@tarojs/taro'
+import { canIUse, showModal, getUpdateManager } from '@tarojs/taro'
+import { systemInfo } from '@/utils/getSystemInfoSync'
 import './app.scss'
 
 class App extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+    // 获取系统参数
+    console.log(systemInfo)
+  }
 
   componentDidShow() {
-    if (Taro.canIUse('getUpdateManager')) {
-      const updateManager = Taro.getUpdateManager()
+    if (canIUse('getUpdateManager')) {
+      const updateManager = getUpdateManager()
       updateManager.onCheckForUpdate(function(res) {
         // 请求完新版本信息的回调
         if (res.hasUpdate) {
           updateManager.onUpdateReady(function() {
-            Taro.showModal({
+            showModal({
               showCancel: false,
               title: '更新提示',
               content: '新版本已经准备好，是否重启应用？',
@@ -27,7 +31,7 @@ class App extends Component {
           })
           updateManager.onUpdateFailed(function() {
             // 新的版本下载失败
-            Taro.showModal({
+            showModal({
               title: '已经有新版本了哟~',
               content: '新版本已经上线啦~，请您删除当前小程序，重新搜索打开哟~',
             })
