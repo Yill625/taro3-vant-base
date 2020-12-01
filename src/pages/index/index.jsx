@@ -9,14 +9,18 @@ export default class Index extends Component {
     active: 0,
   }
 
-  componentWillMount() {}
+  componentWillMount() {
+    Taro.showShareMenu({
+      withShareTicket: true,
+    })
+  }
 
   componentDidMount() {}
 
   componentWillUnmount() {}
 
   componentDidShow() {
-    this.getTest()
+    //this.getTest()
   }
   async getTest() {
     const res = await test()

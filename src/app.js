@@ -1,5 +1,5 @@
 import { Component } from 'nervjs'
-import { canIUse, showModal, getUpdateManager } from '@tarojs/taro'
+import Taro, { canIUse, showModal, getUpdateManager } from '@tarojs/taro'
 import { systemInfo } from '@/utils/getSystemInfoSync'
 import './app.scss'
 
@@ -9,7 +9,18 @@ class App extends Component {
     console.log(systemInfo)
   }
 
-  componentDidShow() {
+  componentDidShow(res) {
+    this.getShareInfo(res.shareTicket)
+    console.log(res)
+    this.setUpdate()
+  }
+  getShareInfo(shareTicket) {
+    console.log(shareTicket)
+    Taro.getShareInfo({ shareTicket }).then(res => {
+      console.log(res)
+    })
+  }
+  setUpdate() {
     if (canIUse('getUpdateManager')) {
       const updateManager = getUpdateManager()
       updateManager.onCheckForUpdate(function(res) {
@@ -40,7 +51,6 @@ class App extends Component {
       })
     }
   }
-
   componentDidHide() {}
 
   componentDidCatchError() {}
