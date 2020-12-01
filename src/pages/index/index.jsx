@@ -51,10 +51,7 @@ export default class Index extends Component {
           height='100rpx'
           src='https://img.yzcdn.cn/vant/cat.jpeg'
         />
-        <View
-          style='height:100px;width:100px;background-color:red;'
-          className='van-hairline--surround'
-        >
+        <View style='height:100px;width:100px;' className='van-hairline--surround'>
           1212
         </View>
 

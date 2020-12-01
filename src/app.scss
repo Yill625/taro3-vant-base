@@ -1,1 +1,4 @@
-@import './vant-weapp.theme.scss';
+@import './styles/vant-weapp.theme.scss';
+// 在 app.wxss 中引入内置样式
+// https://vant-contrib.gitee.io/vant-weapp/#/common
+@import './components/vant-weapp/common/index.wxss';
