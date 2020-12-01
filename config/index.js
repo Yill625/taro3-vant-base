@@ -15,7 +15,7 @@ const config = {
   defineConstants: {},
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
-    '@/util': path.resolve(__dirname, '..', 'src/util'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
     '@/api': path.resolve(__dirname, '..', 'src/api'),
   },
   copy: {
