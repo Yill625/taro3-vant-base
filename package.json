@@ -39,6 +39,7 @@
     "@tarojs/components": "3.0.17",
     "@tarojs/runtime": "3.0.17",
     "@tarojs/taro": "3.0.17",
+    "dayjs": "^1.9.6",
     "nervjs": "^1.5.0"
   },
   "devDependencies": {

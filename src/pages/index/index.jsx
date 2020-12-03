@@ -2,6 +2,7 @@ import Nerv, { Component } from 'nervjs'
 import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { test } from '@/api/test'
+import { dateFormat } from '@/utils/time'
 import './index.scss'
 
 export default class Index extends Component {
@@ -51,7 +52,7 @@ export default class Index extends Component {
           src='https://img.yzcdn.cn/vant/cat.jpeg'
         />
         <View style='height:100px;width:100px;' className='van-hairline--surround'>
-          1212
+          {dateFormat('YYYY-MM-DD hh:mm:ss', 1111111111111)}
         </View>
 
         <van-tabbar
