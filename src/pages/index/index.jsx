@@ -3,6 +3,7 @@ import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { test } from '@/api/test'
 import './index.scss'
+import throttle from '../../decorator/throttle'
 
 export default class Index extends Component {
   state = {
@@ -37,7 +38,10 @@ export default class Index extends Component {
       active: e.detail,
     })
   }
-
+  @throttle(1000)
+  clickText() {
+    console.log(11111)
+  }
   render() {
     return (
       <View>
@@ -50,7 +54,11 @@ export default class Index extends Component {
           height='100rpx'
           src='https://img.yzcdn.cn/vant/cat.jpeg'
         />
-        <View style='height:100px;width:100px;' className='van-hairline--surround'>
+        <View
+          style='height:100px;width:100px;'
+          className='van-hairline--surround'
+          onClick={this.clickText.bind(this)}
+        >
           1212
         </View>
 
