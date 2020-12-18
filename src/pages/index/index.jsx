@@ -4,6 +4,7 @@ import { View } from '@tarojs/components'
 import { test } from '@/api/test'
 import { dateFormat } from '@/utils/time'
 import './index.scss'
+import throttle from '../../decorator/throttle'
 
 export default class Index extends Component {
   state = {
@@ -38,7 +39,10 @@ export default class Index extends Component {
       active: e.detail,
     })
   }
-
+  @throttle(1000)
+  clickText() {
+    console.log(11111)
+  }
   render() {
     return (
       <View>
@@ -53,6 +57,13 @@ export default class Index extends Component {
         />
         <View style='height:100px;width:100px;' className='van-hairline--surround'>
           {dateFormat('YYYY-MM-DD hh:mm:ss', 1111111111111)}
+        </View>
+        <View
+          style='height:100px;width:100px;'
+          className='van-hairline--surround'
+          onClick={this.clickText.bind(this)}
+        >
+          1212
         </View>
 
         <van-tabbar
