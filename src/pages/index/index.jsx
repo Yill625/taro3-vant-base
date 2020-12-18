@@ -5,6 +5,7 @@ import { test } from '@/api/test'
 import { dateFormat } from '@/utils/time'
 import './index.scss'
 import throttle from '../../decorator/throttle'
+import debounce from '../../decorator/debounce'
 
 export default class Index extends Component {
   state = {
@@ -39,7 +40,7 @@ export default class Index extends Component {
       active: e.detail,
     })
   }
-  @throttle(1000)
+  @throttle(500, { leading: false })
   clickText() {
     console.log(11111)
   }
@@ -55,9 +56,9 @@ export default class Index extends Component {
           height='100rpx'
           src='https://img.yzcdn.cn/vant/cat.jpeg'
         />
-        <View style='height:100px;width:100px;' className='van-hairline--surround'>
+        {/* <View style='height:100px;width:100px;' className='van-hairline--surround'>
           {dateFormat('YYYY-MM-DD hh:mm:ss', 1111111111111)}
-        </View>
+        </View> */}
         <View
           style='height:100px;width:100px;'
           className='van-hairline--surround'
