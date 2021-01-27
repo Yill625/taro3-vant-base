@@ -6,5 +6,6 @@ export default {
     'van-button': '../../components/vant-weapp/button/index',
     'van-tabbar': '../../components/vant-weapp/tabbar/index',
     'van-tabbar-item': '../../components/vant-weapp/tabbar-item/index',
+    'van-transition': '../../components/vant-weapp/transition/index',
   },
 }

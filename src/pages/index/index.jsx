@@ -1,6 +1,6 @@
 import Nerv, { Component } from 'nervjs'
 import Taro from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
 import { test } from '@/api/test'
 import { dateFormat } from '@/utils/time'
 import './index.scss'
@@ -10,6 +10,7 @@ import debounce from '../../decorator/debounce'
 export default class Index extends Component {
   state = {
     active: 0,
+    show: false,
   }
 
   componentWillMount() {}
@@ -30,9 +31,11 @@ export default class Index extends Component {
   onPullDownRefresh() {
     console.log('下拉刷新了')
     Taro.vibrateShort()
-    setTimeout(() => {
-      Taro.stopPullDownRefresh()
-    }, 1000)
+    Taro.stopPullDownRefresh()
+    this.getTest()
+    this.setState({
+      show: true,
+    })
   }
 
   change(e) {
@@ -42,15 +45,19 @@ export default class Index extends Component {
   }
   @throttle(500, { leading: false })
   clickText() {
-    console.log(11111)
+    this.setState({
+      show: false,
+    })
+  }
+
+  toDemo() {
+    console.log(1111)
   }
   render() {
     return (
       <View>
-        <van-button type='primary' className='but'>
-          121
-        </van-button>
         <van-image
+          onClick={this.toDemo}
           className='image'
           width='100rpx'
           height='100rpx'
@@ -59,6 +66,12 @@ export default class Index extends Component {
         {/* <View style='height:100px;width:100px;' className='van-hairline--surround'>
           {dateFormat('YYYY-MM-DD hh:mm:ss', 1111111111111)}
         </View> */}
+
+        <van-transition show={this.state.show} custom-class='block' name='fade-right'>
+          <van-button type='primary' className='but' onClick={this.toDemo.bind(this)}>
+            121
+          </van-button>
+        </van-transition>
         <View
           style='height:100px;width:100px;'
           className='van-hairline--surround'
@@ -66,6 +79,17 @@ export default class Index extends Component {
         >
           1212
         </View>
+        {new Array(15).fill(2).map((item, index) => {
+          return (
+            <van-image
+              width='100'
+              key={index}
+              height='1000'
+              lazy-load
+              src='https://img.yzcdn.cn/vant/cat.jpeg?1'
+            />
+          )
+        })}
 
         <van-tabbar
           id='van-toast'

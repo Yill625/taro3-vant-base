@@ -1,22 +1,20 @@
-import Nerv, { Component } from 'nervjs'
-import { View, Text } from '@tarojs/components'
+import Nerv from 'nervjs'
+import { useState } from 'react' // 框架 Hooks （基础 Hooks）
+import { View, Button } from '@tarojs/components'
 
-export default class Index extends Component {
-  componentWillMount() {}
-
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
-
-  render() {
-    return (
-      <View className='index'>
-        <van-button type='primary'>121</van-button>
-      </View>
-    )
-  }
+function Counter() {
+  const [count, setCount] = useState(0)
+  return (
+    <View>
+      Count: {count}
+      <Button onClick={() => setCount(0)}>Reset</Button>
+      <Button onClick={() => setCount(prevCount => prevCount + 1)}>+</Button>
+      <Button onClick={() => setCount(prevCount => prevCount - 1)}>-</Button>
+      <van-button type='primary' className='but' onClick={() => setCount(0)}>
+        111111111
+      </van-button>
+    </View>
+  )
 }
+
+export default Counter
